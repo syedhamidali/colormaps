@@ -210,14 +210,14 @@ plt.imshow(..., cmap=cm) # for example
         H = 350,
         r = Raphael("raph-holder", W, H);
 
-    graph = r.rect(5, 0, 450, H, 10).attr({fill: '#eee', stroke: '#999', 'stroke-width': 1});
+    graph = r.rect(11, 0, 450, H, 10).attr({fill: '#eee', stroke: '#999', 'stroke-width': 1});
 
     gridp = "M120,0L120,350M230,0L230,350M340,0L340,350M5,88L455,88M5,175L455,175M5,263L455,263"
     gridPath = r.path(gridp).attr({stroke: '#bbb'});
 
-    var Red = new colormapLine(r, 5, "rgb(255,0,0)", [10,180,340,340,340]);
-    var Green = new colormapLine(r, 5, "rgb(0,255,0)", [10,10,180,340,340]);
-    var Blue = new colormapLine(r, 5, "rgb(0,0,255)", [10,10,10,180,340]);
+    var Red = new colormapLine(r, 11, "rgb(255,0,0)", [10,180,340,340,340]);
+    var Green = new colormapLine(r, 11, "rgb(0,255,0)", [10,10,180,340,340]);
+    var Blue = new colormapLine(r, 11, "rgb(0,0,255)", [10,10,10,180,340]);
     var cmapLines = [Red, Green, Blue];
 
     Gray = r.path("M0,0L120,0L230,0L340,0L460,0").attr({stroke: '#d5d5d5', 'stroke-width': 4});
@@ -288,12 +288,12 @@ plt.imshow(..., cmap=cm) # for example
       var avg = 0;
       var p = "M";
       var adjust = 0;
-      for (var i = 0; i < 5; i++) {
+      for (var i = 0; i < 11; i++) {
           avg = (Red.buttons.items[i].attr('cy') + Green.buttons.items[i].attr('cy') + Blue.buttons.items[i].attr('cy'))/3;
           if(i > 0) p += "L";
 
-          if(i==0) adjust = -5;
-          else if(i==4) adjust = 5;
+          if(i==0) adjust = -11;
+          else if(i==4) adjust = 11;
           else adjust = 0;
           p = p + [Red.buttons.items[i].attr('cx') + adjust, avg];
       }
